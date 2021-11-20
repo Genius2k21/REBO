@@ -1,5 +1,7 @@
 # REBO
 
+[![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+
 Project Management App to help assist and facilitate the successful rebuilding and rehabilitation of distressed properties. Also commonly referred to as fix-n-flip for community improvement.
 
 ## Project Description:
