@@ -33,7 +33,26 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 Developers
 
 - Joseph Blake
+
+  - Email: josephblake2012@yahoo.com
+  - Github: https://github.com/Genius2k21
+
 - Nathaniel Gordon
+
+  - Email: begordon22@gmail.com
+  - Github: https://github.com/wildkat246
+
 - Pia T
+
+  - Email: trivedp18@gmail.com
+  - Github: https://github.com/ptriv1
+
 - Key Compton Jr.
+
+  - Email: integra378@aol.com
+  - Github: https://github.com/intergra378
+
 - Michael Feldman
+
+  - Email: micah41224@gmail.com
+  - Github: https://github.com/micah41224
