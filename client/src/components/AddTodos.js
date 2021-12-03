@@ -1,19 +1,30 @@
-import { useMutation } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 import moment from 'moment';
-import React, { useContext,useEffect, useRef, useState } from 'react';
-import { ADD_TODO } from '../graphql/Mutation';
-import { GET_TODOS } from '../graphql/Query';
+import React, { useContext,useEffect, useRef, useState, } from 'react';
+import { ADD_TODO, UPDATE_TODO } from '../graphql/Mutation';
+import { GET_TODO, GET_TODOS } from '../graphql/Query';
 import { TodoContext } from '../TodoContext';
 
 
 const AddTodos = () => {
-    const{selectedId, setSelectedId} = useContext(TodoContext)
-    const inputAreaRef = useRef()
+    const{selectedId, setSelectedId} = useContext(TodoContext);
+    const[updateTodo] = useMutation(UPDATE_TODO)
     const [todo, setTodo] = useState({
         title:'',
         detail:'',
         date:''
     })
+    const {loading,error,data} = useQuery(GET_TODO,{
+        variables:{id:selectedId},onCompleted:(data)=>(setTodo(data.getTodo))
+    })
+    console.log('gettodo', data)
+    console.log(selectedId)
+    const inputAreaRef = useRef()
+    // const [todo, setTodo] = useState({
+    //     title:'',
+    //     detail:'',
+    //     date:''
+    // })
     useEffect(() => {
         const checkIfClickedOutside = e=>{
             if(!inputAreaRef.current.contains(e.target)) {
@@ -30,9 +41,12 @@ const AddTodos = () => {
     }, [])
 
     const [addTodo] = useMutation(ADD_TODO)
+
     const onSubmit = e=>{
         e.preventDefault();
-        addTodo({
+        console.log("selectedId: "+selectedId);
+        if (selectedId==0) {
+            addTodo({
             variables:{
                 title:todo.title,
                 detail:todo.detail,
@@ -41,6 +55,22 @@ const AddTodos = () => {
                 { query: GET_TODOS }
             ]
         })
+        }else{
+            console.log("todo.id: "+todo.id);
+            console.log("selectedId: "+selectedId);
+             updateTodo({
+            variables:{
+                // id: todo.id,     Switched to selectedId here and changed to $id:ID on mutation.
+                id: selectedId,
+                title:todo.title,
+                detail:todo.detail,
+                date:todo.date
+            },refetchQueries:[
+                { query: GET_TODOS }
+            ]
+        })
+        }
+
     }
     return (
     <form onSubmit={onSubmit}ref={inputAreaRef} >
