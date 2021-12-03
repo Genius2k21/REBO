@@ -15,7 +15,9 @@ return (
     <AddTodos/>
     <div className="list-group mt-4">
         {data?.getTodos.map(todo=>(
-           <Todo key={todo.id}
+           <Todo 
+           key={todo.id}
+           id={todo.id}
            title={todo.title}
            detail={todo.detail}
            date={todo.date}

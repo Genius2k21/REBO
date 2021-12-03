@@ -1,15 +1,29 @@
 import { useMutation } from '@apollo/client';
 import moment from 'moment';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ADD_TODO } from '../graphql/Mutation';
 import { GET_TODOS } from '../graphql/Query';
 
 const AddTodos = () => {
+    const inputAreaRef = useRef()
     const [todo, setTodo] = useState({
         title:'',
         detail:'',
         date:''
     })
+    useEffect(() => {
+        const checkIfClickedOutside = e=>{
+            if(!inputAreaRef.current.contains(e.target)) {
+                console.log('Outside input area');
+            }else{
+                console.log('Inside input area');
+            }
+        }
+        document.addEventListener("mousedown",checkIfClickedOutside)
+        return () =>{
+            document.removeEventListener("mousedown", checkIfClickedOutside)
+        }
+    }, [])
 
     const [addTodo] = useMutation(ADD_TODO)
     const onSubmit = e=>{
@@ -25,10 +39,10 @@ const AddTodos = () => {
         })
     }
     return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit}ref={inputAreaRef} >
         <div className="form-group mb-3">
             <label>Title</label>
-            <pre>{JSON.stringify(todo, null, '\t')}</pre>
+            
             <input type="text" className="form-control" placeholder="Enter title"
             value={todo.title}
             onChange={e => setTodo({ ...todo, title: e.target.value })}

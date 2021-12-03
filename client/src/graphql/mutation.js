@@ -10,4 +10,8 @@ mutation addTodo($title:String, $detail:String, $date:Date){
 }
 
 `
-// export const DELETE_TODO
+export const DELETE_TODO = gql`
+    mutation deleteTodo($id:ID){
+    deleteTodo(id:$id)
+    }
+`
