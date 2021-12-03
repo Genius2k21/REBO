@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import moment from 'moment';
 import { useMutation } from '@apollo/client';
 import { DELETE_TODO } from '../graphql/Mutation';
 import { GET_TODOS } from '../graphql/Query';
+import {TodoContext} from '../TodoContext';
 
 const Todo = ({ id,title,date,detail }) => {
+    const { selectedId, setSelectedId} =useContext(TodoContext);
     const [deleteTodo] = useMutation(DELETE_TODO)
     const removeTodo = (id)=>{
         deleteTodo({
@@ -17,9 +19,10 @@ const Todo = ({ id,title,date,detail }) => {
     }
 
     return (
-         <a href="#" className="list-group-item list-group-item-action flex-column align-items-start ">
+         <a href="#" onClick={()=>setSelectedId(id)}
+         className="list-group-item list-group-item-action flex-column align-items-start ">
         <div className="d-flex w-100 justify-content-between">
-            <h5 className="mb-1">{title}</h5>
+            <h5 className="mb-1">{title}{selectedId}</h5>
             <small>{moment(date).format("MMMM DD YYYY")}</small>
         </div>
     <p className="mb-1">{detail} </p>
