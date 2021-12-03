@@ -1,5 +1,10 @@
 import './App.css';
+import {GET_TODOS} from './graphql/query'
+import { useQuery } from '@apollo/client';
+
 function App() {
+    const {loading, error, data} = useQuery(GET_TODOS);
+    console.log(data)
 return (
 <div className="container todobox">
     <form>

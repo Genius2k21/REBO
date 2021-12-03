@@ -1,13 +1,13 @@
 import mongoose from 'mongoose';
-const Schema = mongoose.Schema;
+const Schema = mongoose.Schema
 const todoSchema = new Schema({
     title:{
         type:String,
-        required: true
+        required:true
     },
     detail:String,
     date:Date
-},{timestamps: true})
+},{timestamps:true})
 
-const Todo = mongoose.model('todo', todoSchema);
+const Todo = mongoose.model('todo',todoSchema);
 export default Todo;

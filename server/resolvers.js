@@ -1,13 +1,12 @@
-import Todo from "./models/Todo.js";
-
+import Todo from './models/Todo.js'
 const resolvers = {
-    Query: {
-        welcome: () => {
-            return "Welcome to Rebuild"
+    Query:{
+        welcome:() =>{
+            return "Welcome to Rebuilt!"
         },
         getTodos: async () => {
             const todos = await Todo.find()
-            return todos 
+            return todos
         },
         getTodo: async (root,args) => {
             const todo = await Todo.findById(args.id)
@@ -15,32 +14,33 @@ const resolvers = {
         },
     },
     Mutation:{
-        addTodo: async (root,args) => {
-            const newTodo = new Todo({ title: args.title, detail: args.detail, date: args.date })
+        addTodo:async(root,args)=>{
+            const newTodo = new Todo({title:args.title,detail:args.detail,date:args.date})
             await newTodo.save()
             return newTodo
         },
-        deleteTodo: async (root,args) => {
+        deleteTodo:async(root,args)=>{
             await Todo.findByIdAndDelete(args.id);
-            return "Deleted successfully"
+            return "The todo deleted successfully"
         },
-        udpateTodo: async (root,args) => {
-            const {id, title, detail, date} = args;
-            const udpateTodo = {};
-            if (title !=undifined) {
+        updateTodo:async(root,args)=>{
+            const {id,title,detail,date} = args;
+            const updatedTodo = {};
+            if (title!=undefined) {
                 updatedTodo.title = title
             }
-            if (detail !=undifined) {
-                updatedTodo.detail = detail 
+            if (detail!=undefined) {
+                updatedTodo.detail = detail
             }
-            if (date !=undifined) {
+            if (date!=undefined) {
                 updatedTodo.date = date
-            }   
-            const todo = await Todo.findByIdAndUpdate(id, updatedTodo, { new: true})    
-            
-            return todo;    
+            }
+            const todo = await Todo.findByIdAndUpdate(id,updatedTodo, { new: true })
+
+            return todo;
         },
     }
+
 }
 
 export default resolvers;
