@@ -17,6 +17,7 @@ type Query{
 type Mutation{
     addTodo(title:String,detail:String,date:Date);Todo
     deleteTodo(id:ID):String
+    udpateTodo(id:ID,title:String,detail:String,date:Date):Todo
 }
 `
 
