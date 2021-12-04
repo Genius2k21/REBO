@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/client';
 // import moment from 'moment';
 import AddTodos from './components/AddTodos';
 import Todo from './components/Todo';
+import Title from './components/Title';
 import {TodoContext} from './TodoContext';
 import { useState } from 'react';
 
@@ -16,6 +17,7 @@ function App() {
 return (
     <TodoContext.Provider value ={{selectedId,setSelectedId}}>
 <div className="container todobox">
+    <Title />
     <AddTodos/>
     <div className="list-group mt-4">
         {data?.getTodos.map(todo=>(

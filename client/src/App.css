@@ -7,5 +7,47 @@ body {
   -webkit-box-shadow: 5px 5px 15px 5px #000000;
   box-shadow: 5px 5px 15px 5px #000000;
   padding: 30px;
-  margin-top: 10px;
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.titleHeader {
+  padding-top: 15px;
+  padding-bottom: 30px;
+  color: black;
+  font-weight: bolder;
+  font-family: "Permanent Marker", cursive;
+  font-size: 50px;
+  border: black solid 5px;
+  border-radius: 15px;
+  background-color: white;
+  width: 400px;
+  justify-content: center;
+  margin: auto;
+}
+
+.alignText {
+  justify-content: center;
+}
+
+.bolder {
+  font-weight: bolder;
+}
+
+.buttonColors {
+  background-color: black;
+  color: white;
+}
+
+@media (max-width: 470px) {
+  .titleHeader {
+    width: auto;
+  }
+}
+
+@media (max-width: 575px) {
+  .todobox {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
 }
