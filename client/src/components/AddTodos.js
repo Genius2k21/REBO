@@ -104,4 +104,34 @@ const AddTodos = () => {
     )
 }
 
+
+
+//   <form onSubmit={onSubmit}ref={inputAreaRef} >
+//         <div className="form-group mb-3">
+//             <label>Title</label>
+            
+//             <input type="text" className="form-control" placeholder="Enter title"
+//             value={todo.title}
+//             onChange={e => setTodo({ ...todo, title: e.target.value })}
+//             />
+//         </div>
+//         <div className="form-group mb-3">
+//             <label>Detail</label>
+//             <input type="text" className="form-control" placeholder="Enter Detail"
+//             value={todo.detail}
+//             onChange={e => setTodo({ ...todo, detail: e.target.value })}
+//             />
+//         </div>
+//         <div className="form-group mb-3">
+//             <label >Date</label>
+//             <input type="date" className="form-control" placeholder="Password"
+//             value={moment(todo.date).format('yyyy-MM-DD')}
+//             onChange={e => setTodo({ ...todo, date: e.target.value })}
+//             />
+//         </div>
+//             <button type="submit" className="btn btn-primary">{(selectedId===0)?"Add" : "Update"}</button>
+//         </form>
+//     )
+// }
+
 export default AddTodos
