@@ -15,9 +15,12 @@ const AddTodos = () => {
         date:''
     })
     const {loading,error,data} = useQuery(GET_TODO,{
-        variables:{id:selectedId},onCompleted:(data)=>(setTodo(data.getTodo))
+        variables:{id:selectedId},onCompleted:(data)=>{
+            console.log(data.getTodo)
+            // setTodo(data.getTodo)}
+        }
     })
-    console.log('gettodo', data)
+    // console.log('gettodo', data)
     // console.log(selectedId)
     const inputAreaRef = useRef()
     // const [todo, setTodo] = useState({
@@ -25,6 +28,9 @@ const AddTodos = () => {
     //     detail:'',
     //     date:''
     // })
+    useEffect(()=> {
+        console.log(todo)
+    },[todo])
     useEffect(() => {
         const checkIfClickedOutside = e=>{
             if(!inputAreaRef.current.contains(e.target)) {
@@ -104,34 +110,5 @@ const AddTodos = () => {
     )
 }
 
-
-
-//   <form onSubmit={onSubmit}ref={inputAreaRef} >
-//         <div className="form-group mb-3">
-//             <label>Title</label>
-            
-//             <input type="text" className="form-control" placeholder="Enter title"
-//             value={todo.title}
-//             onChange={e => setTodo({ ...todo, title: e.target.value })}
-//             />
-//         </div>
-//         <div className="form-group mb-3">
-//             <label>Detail</label>
-//             <input type="text" className="form-control" placeholder="Enter Detail"
-//             value={todo.detail}
-//             onChange={e => setTodo({ ...todo, detail: e.target.value })}
-//             />
-//         </div>
-//         <div className="form-group mb-3">
-//             <label >Date</label>
-//             <input type="date" className="form-control" placeholder="Password"
-//             value={moment(todo.date).format('yyyy-MM-DD')}
-//             onChange={e => setTodo({ ...todo, date: e.target.value })}
-//             />
-//         </div>
-//             <button type="submit" className="btn btn-primary">{(selectedId===0)?"Add" : "Update"}</button>
-//         </form>
-//     )
-// }
 
 export default AddTodos

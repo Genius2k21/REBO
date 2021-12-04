@@ -11,7 +11,10 @@ import { useState } from 'react';
 
 function App() {
     const [selectedId, setSelectedId] = useState(0)
-    const {loading, error, data} = useQuery(GET_TODOS);
+    const {loading, error, data} = useQuery(GET_TODOS,{
+        fetchPolicy:'network-only',
+        nextFetchPolicy:'network-only'
+    });
     if(loading) return <p>loading...</p>
     if (error) return <p>{error.message}</p>
     console.log(data)
