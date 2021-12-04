@@ -1,5 +1,5 @@
 import Todo from './models/Todo.js'
-const { AuthenticationError } = require('apollo-server-express');
+// const { AuthenticationError } = require('apollo-server-express');
 
 const resolvers = {
     Query:{
@@ -7,26 +7,29 @@ const resolvers = {
             return "Welcome to Rebuilt!"
         },
         getTodos: async (context) => {
-            if (context.user) {
+            // if (context.user) {
             const todos = await Todo.find()
-            return todos }
-              throw new AuthenticationError('Not logged in');
+            return todos 
+        // }
+        //       throw new AuthenticationError('Not logged in');
         },
         getTodo: async (root,args,context) => {
-            if (context.user) {
+            // if (context.user) {
             const todo = await Todo.findById(args.id)
-            return todo }
-                throw new AuthenticationError('Not logged in');
+            return todo 
+        // }
+        //         throw new AuthenticationError('Not logged in');
 
         },
     },
     Mutation:{
         addTodo:async(root,args,context)=>{
-            if (context.user) {
+            // if (context.user) {
             const newTodo = new Todo({title:args.title,detail:args.detail,date:args.date})
             await newTodo.save()
-            return newTodo }
-                throw new AuthenticationError('Not logged in');
+            return newTodo 
+        // }
+        //         throw new AuthenticationError('Not logged in');
         },
         deleteTodo:async(root,args)=>{
             await Todo.findByIdAndDelete(args.id);
