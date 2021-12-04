@@ -78,23 +78,23 @@ const AddTodos = () => {
     return (
     <form onSubmit={onSubmit}ref={inputAreaRef} >
         <div className="form-group mb-3">
-            <label>Title</label>
+            <label>Task Name</label>
             
-            <input type="text" className="form-control" placeholder="Enter title"
+            <input type="text" className="form-control" placeholder="Enter task name"
             value={todo.title}
             onChange={e => setTodo({ ...todo, title: e.target.value })}
             />
         </div>
         <div className="form-group mb-3">
-            <label>Detail</label>
-            <input type="text" className="form-control" placeholder="Enter Detail"
+            <label>Task Description</label>
+            <input type="text" className="form-control" placeholder="Enter task description"
             value={todo.detail}
             onChange={e => setTodo({ ...todo, detail: e.target.value })}
             />
         </div>
         <div className="form-group mb-3">
-            <label >Date</label>
-            <input type="date" className="form-control" placeholder="Password"
+            <label >Deadline</label>
+            <input type="date" className="form-control" placeholder="Deadline"
             value={moment(todo.date).format('yyyy-MM-DD')}
             onChange={e => setTodo({ ...todo, date: e.target.value })}
             />
