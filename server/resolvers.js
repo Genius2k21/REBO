@@ -1,23 +1,32 @@
 import Todo from './models/Todo.js'
+const { AuthenticationError } = require('apollo-server-express');
+
 const resolvers = {
     Query:{
         welcome:() =>{
             return "Welcome to Rebuilt!"
         },
-        getTodos: async () => {
+        getTodos: async (context) => {
+            if (context.user) {
             const todos = await Todo.find()
-            return todos
+            return todos }
+              throw new AuthenticationError('Not logged in');
         },
-        getTodo: async (root,args) => {
+        getTodo: async (root,args,context) => {
+            if (context.user) {
             const todo = await Todo.findById(args.id)
-            return todo
+            return todo }
+                throw new AuthenticationError('Not logged in');
+
         },
     },
     Mutation:{
-        addTodo:async(root,args)=>{
+        addTodo:async(root,args,context)=>{
+            if (context.user) {
             const newTodo = new Todo({title:args.title,detail:args.detail,date:args.date})
             await newTodo.save()
-            return newTodo
+            return newTodo }
+                throw new AuthenticationError('Not logged in');
         },
         deleteTodo:async(root,args)=>{
             await Todo.findByIdAndDelete(args.id);
