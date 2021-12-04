@@ -18,7 +18,7 @@ const AddTodos = () => {
         variables:{id:selectedId},onCompleted:(data)=>(setTodo(data.getTodo))
     })
     console.log('gettodo', data)
-    console.log(selectedId)
+    // console.log(selectedId)
     const inputAreaRef = useRef()
     // const [todo, setTodo] = useState({
     //     title:'',
@@ -43,9 +43,12 @@ const AddTodos = () => {
     const [addTodo] = useMutation(ADD_TODO)
 
     const onSubmit = e=>{
+        // if (todo.title==""){
+        //     alert("Please enter title!")
+        // }
         e.preventDefault();
         console.log("selectedId: "+selectedId);
-        if (selectedId==0) {
+        if (selectedId===0) {
             addTodo({
             variables:{
                 title:todo.title,
@@ -75,7 +78,7 @@ const AddTodos = () => {
     return (
     <form onSubmit={onSubmit}ref={inputAreaRef} >
         <div className="form-group mb-3">
-            <label>Title{selectedId}</label>
+            <label>Title</label>
             
             <input type="text" className="form-control" placeholder="Enter title"
             value={todo.title}
@@ -96,7 +99,7 @@ const AddTodos = () => {
             onChange={e => setTodo({ ...todo, date: e.target.value })}
             />
         </div>
-            <button type="submit" className="btn btn-primary">{(selectedId==0)?"Add" : "Update"}</button>
+            <button type="submit" className="btn btn-primary">{(selectedId===0)?"Add" : "Update"}</button>
         </form>
     )
 }
