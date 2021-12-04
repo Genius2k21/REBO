@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/client';
 import AddTodos from './components/AddTodos';
 import Todo from './components/Todo';
 import Title from './components/Title';
+import Calculator from './components/Calculator';
 import {TodoContext} from './TodoContext';
 import { useState } from 'react';
 
@@ -16,8 +17,9 @@ function App() {
     console.log(data)
 return (
     <TodoContext.Provider value ={{selectedId,setSelectedId}}>
+           <Title />
 <div className="container todobox">
-    <Title />
+ 
     <AddTodos/>
     <div className="list-group mt-4">
         {data?.getTodos.map(todo=>(
@@ -33,6 +35,7 @@ return (
           
         </div>
     </div>
+        <Calculator />
     </TodoContext.Provider>
     );
 }
