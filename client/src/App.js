@@ -37,7 +37,7 @@ return (
     <TodoContext.Provider value ={{selectedId,setSelectedId}}>
            
          <Switch>
-            <Route path="/about" exact>
+            <Route path="/Tasks" exact>
             <div className="container py-5">
            <div className="row text-center alignText">
                

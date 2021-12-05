@@ -73,7 +73,7 @@ const Contact = () => {
         <div className='row'>
           <div className='col-12 text-center'>
             <div className='contactForm'>
-              <form id='contact-form' onSubmit={handleSubmit(onSubmit)} noValidate>
+              <form id='contact-form' className="otherContactForm" onSubmit={handleSubmit(onSubmit)} noValidate>
                 {/* Row 1 of form */}
                 <div className='row formRow'>
                   <div className='col-6'>

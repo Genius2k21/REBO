@@ -56,7 +56,7 @@ const Navbar = () => {
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation">
-            <i className="fas fa-bars text-white">
+            <i className="fa fa-bars text-white">
             </i>
             </button>
 
@@ -71,25 +71,25 @@ const Navbar = () => {
 
                     <li className="nav-item active">
                         <NavLink className="nav-link" to="/Login" exact>
-                            <i className="far fa-address-book"></i>Login
+                            Login
                         </NavLink>
                     </li>
 
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="/About" exact>
-                            <i className="far fa-clone"></i>Task List
+                        <NavLink className="nav-link" to="/Tasks" exact>
+                            Task List
                         </NavLink>
                     </li>
 
                     <li className="nav-item">
                         <NavLink className="nav-link" to="/contact" exact>
-                            <i className="far fa-chart-bar"></i>Contact Us
+                            Contact Us
                         </NavLink>
                     </li>
 
                     <li className="nav-item">
                         <NavLink className="nav-link" to="/Calculator" exact>
-                            <i className="far fa-copy"></i>Calculator
+                            Calculator
                         </NavLink>
                     </li>
                 </ul>

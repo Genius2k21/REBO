@@ -29,9 +29,10 @@ const Title = () => {
 
              <div className="row text-center alignText marginTop">
                         <div className="col-lg-5 col-xs-12">
-                    <h1 className="about titleHeader">
+                    <h2 className="about">
                        Feature coming soon!
-                    </h1>
+                    </h2>
+                    <img className="calculator" src="/calculatorImage.png" alt="Coming Soon Calculator"></img>
                     </div>
                </div>
         </div>

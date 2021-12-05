@@ -104,7 +104,7 @@ const AddTodos = () => {
         <div className="form-group mb-3">
             <label className="bolder">Deadline</label>
             <input type="date" className="form-control" placeholder="Deadline"
-            value={moment(todo.date).format('yyyy-MM-DD')}
+            value={moment.utc(todo.date).format('yyyy-MM-DD')}
             onChange={e => setTodo({ ...todo, date: e.target.value })}
             />
         </div>
