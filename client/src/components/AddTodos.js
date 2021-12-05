@@ -82,7 +82,10 @@ const AddTodos = () => {
 
     }
     return (
+        
+
     <form onSubmit={onSubmit}ref={inputAreaRef} >
+        
         <div className="form-group mb-3">
             <label className="bolder">Task Name</label>
             

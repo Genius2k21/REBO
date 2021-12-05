@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+/* :root {
+  --light: #d0d1d3;
+  --dark: #040d14;
+  --green: #21ce99;
+} */
+
+/* body {
+  font-family: Poppins;
+  background: var(--dark);
+  line-height: 26px;
+  margin: 0;
+} */
+
+/* h1 {
+  color: var(--green);
+} */
+
+/* .App {
+  height: 75vh;
+  margin-top: 15vh;
+} */
+
+form {
+  margin-top: 20px;
+  padding-top: 20px;
+  background: var(--white);
+  border-radius: 15px;
+  border: black solid 5px;
+}
+
+.formRow {
+  margin: 10px 0 20px 0;
+}
+
+.formInput {
+  padding: 15px 10px;
+  background-color: var(--white);
+  box-shadow: 0 0 0 2px var(--dark);
+  border: none;
+  color: var(--dark);
+}
+
+.formInput:focus {
+  background-color: var(--white);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--purple);
+  color: var(--dark);
+}
+
+.formInput::placeholder {
+  color: var(--dark);
+  opacity: 1;
+}
+
+.formInput:focus::placeholder {
+  color: var(--dark);
+  opacity: 1;
+}
+
+.errorMessage {
+  color: #f45532;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+#notifyToast {
+  color: black;
+  border-radius: 6px;
+  width: 200px;
+  margin-left: 75px;
+  background-color: var(--green);
+}
+
+.submit-btn {
+  background-color: var(--white);
+  color: var(--dark) !important;
+  padding: 15px 50px;
+  border: 2px solid var(--dark);
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.submit-btn:hover {
+  background-color: var(--green);
+  color: var(--dark) !important;
+  border: 2px solid var(--green);
+}
+
+.submit-btn:disabled:hover {
+  background-color: var(--dark);
+  color: var(--green) !important;
+  cursor: wait;
+}
+
+@media (max-width: 768px) {
+  .submit-message {
+    width: 125px;
+    margin-left: 200px;
+  }
+}
+
+.contactHeader {
+  padding-top: 15px;
+  padding-bottom: 30px;
+  padding-left: 25px;
+  color: black;
+  font-weight: bolder;
+  font-family: "Permanent Marker", cursive;
+  font-size: 50px;
+  border: black solid 5px;
+  border-radius: 15px;
+  background-color: white;
+  width: 350px;
+  justify-content: center;
+  margin: 25px auto 25px auto;
+}
