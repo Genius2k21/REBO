@@ -20,6 +20,7 @@ import Navbar from "./components/Navbar/navbar";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Auth from './utils/auth';
+import Contact from "./components/Contact/contact";
 
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
@@ -37,7 +38,7 @@ const authLink = setContext((_, { headers }) => {
 //   link: authLink.concat(httpLink),
 //   cache: new InMemoryCache(),
 // });
-import Contact from "./components/Contact/contact";
+
 
 function App() {
     
