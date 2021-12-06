@@ -37,6 +37,7 @@ const authLink = setContext((_, { headers }) => {
 //   link: authLink.concat(httpLink),
 //   cache: new InMemoryCache(),
 // });
+import Contact from "./components/Contact/contact";
 
 function App() {
     
@@ -58,7 +59,7 @@ return (
     <TodoContext.Provider value ={{selectedId,setSelectedId}}>
            {error ?   <Login/> : (
          <Switch>
-            <Route path="/about" exact>
+            <Route path="/Tasks" exact>
             <div className="container py-5">
            <div className="row text-center alignText">
                
@@ -89,6 +90,9 @@ return (
      </Route>
      <Route path="/Login" exact>
       <Login/>
+    </Route>
+    <Route path="/contact" exact>
+      <Contact/>
     </Route>
     <Route path="/Signup" exact>
       <Signup/>

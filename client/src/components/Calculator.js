@@ -22,9 +22,19 @@ const Title = () => {
 
 
 
+
                
                
             </div>
+
+             <div className="row text-center alignText marginTop">
+                        <div className="col-lg-5 col-xs-12">
+                    <h2 className="about">
+                       Feature coming soon!
+                    </h2>
+                    <img className="calculator" src="/calculatorImage.png" alt="Coming Soon Calculator"></img>
+                    </div>
+               </div>
         </div>
     )
 }
