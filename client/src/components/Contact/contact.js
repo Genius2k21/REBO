@@ -4,37 +4,32 @@ import React from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import './contact.css';
-
+import {StickyShareButtons} from 'sharethis-reactjs';
 var userID = process.env.REACT_APP_USER_ID
 var templateID = process.env.REACT_APP_TEMPLATE_ID
 var serviceID = process.env.REACT_APP_SERVICE_ID
 // import { useForm } from 'react-hook-form';
-
 const Contact = () => {
-
     const {
     register,
     handleSubmit,
     reset,
     formState: { errors }
   } = useForm();
-
   const toastifySuccess = () => {
   toast('Form sent!', {
     position: 'bottom-right',
     autoClose: 5000,
     hideProgressBar: true,
     closeOnClick: true,
-    pauseOnHover: true,  
+    pauseOnHover: true,
     draggable: false,
     className: 'submit-feedback success',
     toastId: 'notifyToast'
   });
 };
-  
   const onSubmit = async (data) => {
     const { name, email, subject, message } = data;
-    
     try {
     const templateParams = {
       name,
@@ -59,13 +54,11 @@ const Contact = () => {
   } catch (e) {
     console.log(e);
   }
-
     console.log('Name: ', name);
     console.log('Email: ', email);
     console.log('Subject: ', subject);
     console.log('Message: ', message);
   };
-
     return (
     <div className='ContactForm'>
         <h1 className="contactHeader">Contact Us</h1>
@@ -153,8 +146,42 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <StickyShareButtons
+          config={{
+            alignment: 'left',    // alignment of buttons (left, right)
+            color: 'white',      // set the color of buttons (social, white)
+            enabled: true,        // show/hide buttons (true, false)
+            font_size: 16,        // font size for the buttons
+            hide_desktop: false,  // hide buttons on desktop (true, false)
+            labels: 'null',     // button labels (cta, counts, null)
+            language: 'en',       // which language to use (see LANGUAGES)
+            min_count: 0,         // hide react counts less than min_count (INTEGER)
+            networks: [           // which networks to include (see SHARING NETWORKS)
+              'linkedin',
+              'facebook',
+              'twitter',
+              'pinterest',
+              'reddit',
+              'email'
+            ],
+            padding: 12,          // padding within buttons (INTEGER)
+            radius: 4,            // the corner radius on each button (INTEGER)
+            show_total: false,     // show/hide the total share count (true, false)
+            show_mobile: true,    // show/hide the buttons on mobile (true, false)
+            show_toggle: true,    // show/hide the toggle buttons (true, false)
+            size: 48,             // the size of each button (INTEGER)
+            top: 160,             // offset in pixels from the top of the page
+            // OPTIONAL PARAMETERS
+            url: 'https://www.sharethis.com', // (defaults to current url)
+            image: '',  // (defaults to og:image or twitter:image)
+            description: 'Share',       // (defaults to og:description or twitter:description)
+            title: 'custom title',            // (defaults to og:title or twitter:title)
+            message: 'custom email text',     // (only for email sharing)
+            subject: 'custom email subject',  // (only for email sharing)
+            username: 'custom twitter handle' // (only for twitter sharing)
+          }}
+        />
     </div>
-
     )
 }
 export default Contact;
