@@ -71,7 +71,7 @@ const Navbar = () => {
                         <div className="right"></div>
                     </div>
 
-                    <li className="nav-item">
+                    <li className="nav-item active">
                         <NavLink className="nav-link" to="/Login" exact>
                             Login
                         </NavLink>
