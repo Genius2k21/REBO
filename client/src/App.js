@@ -21,7 +21,10 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Auth from './utils/auth';
 import Contact from "./components/Contact/contact";
+<<<<<<< HEAD
+=======
 
+>>>>>>> d1e063057d949200ec4f87a4c22e31ce4e3cd609
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
   const token = localStorage.getItem('id_token');
