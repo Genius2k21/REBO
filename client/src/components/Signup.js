@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import { useMutation } from '@apollo/client';
 import { ADD_PROFILE } from '../utils/mutations';
-
 import Auth from '../utils/auth';
 
 const Signup = () => {
@@ -41,9 +39,9 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
+    // <main className="">
+      // <div className="">
+        <div className="container todobox col-lg-5">
           <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
           <div className="card-body">
             {data ? (
@@ -54,7 +52,7 @@ const Signup = () => {
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <input
-                  className="form-input"
+                  className="form-control"
                   placeholder="Your username"
                   name="name"
                   type="text"
@@ -62,7 +60,7 @@ const Signup = () => {
                   onChange={handleChange}
                 />
                 <input
-                  className="form-input"
+                  className="form-control"
                   placeholder="Your email"
                   name="email"
                   type="email"
@@ -70,7 +68,7 @@ const Signup = () => {
                   onChange={handleChange}
                 />
                 <input
-                  className="form-input"
+                  className="form-control"
                   placeholder="******"
                   name="password"
                   type="password"
@@ -78,7 +76,7 @@ const Signup = () => {
                   onChange={handleChange}
                 />
                 <button
-                  className="btn btn-block btn-info"
+                  className="btn btn-primary buttonColors"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
@@ -94,8 +92,8 @@ const Signup = () => {
             )}
           </div>
         </div>
-      </div>
-    </main>
+      //</div>
+    // </main>
   );
 };
 

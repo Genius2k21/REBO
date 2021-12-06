@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
-
 import Auth from '../utils/auth';
 import Signup from './Signup';
 
@@ -45,9 +44,15 @@ console.log(error);
 const isLoggedIn = Auth.loggedIn()
 
   return (
+    
     <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
+      <div className="container">
+        <div className="row text-center alignText">
+        <img className="calculator" src="/pencil-ruler-solidtestwide.png" alt="REBO Logo"></img>
+        </div>
+        </div>
+      <div className="row">
+        <div className="container todobox col-lg-5">
           <h4 className="card-header bg-dark text-light p-2">Login</h4>
           <div className="card-body">
             {data ? (
@@ -59,7 +64,7 @@ const isLoggedIn = Auth.loggedIn()
               <div>
               <form onSubmit={handleFormSubmit}>
                 <input
-                  className="form-input"
+                  className="form-control"
                   placeholder="Your email"
                   name="email"
                   type="email"
@@ -67,7 +72,7 @@ const isLoggedIn = Auth.loggedIn()
                   onChange={handleChange}
                 />
                 <input
-                  className="form-input"
+                  className="form-control"
                   placeholder="******"
                   name="password"
                   type="password"
@@ -75,7 +80,7 @@ const isLoggedIn = Auth.loggedIn()
                   onChange={handleChange}
                 />
                 <button
-                  className="btn btn-block btn-info"
+                  className="btn btn-primary buttonColors"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
@@ -96,9 +101,11 @@ const isLoggedIn = Auth.loggedIn()
             )}
           </div>
         </div>
-        <Signup/>
-        {isLoggedIn&&<button onClick={Auth.logout}>Logout</button>}
-      </div>
+        <Signup/></div>
+        <div className="row text-center alignText">
+        {isLoggedIn&&<button className="btn btn-primary buttonColors" onClick={Auth.logout}>Logout</button>}
+        </div>
+      
     </main>
   );
 };
