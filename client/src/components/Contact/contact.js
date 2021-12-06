@@ -148,9 +148,6 @@ const Contact = () => {
                   Submit
                 </button>
               </form>
-              <div id="like-button">
-              <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-              </div>
             </div>
             <ToastContainer />
           </div>
