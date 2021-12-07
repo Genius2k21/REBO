@@ -54,7 +54,8 @@ async function initServer(){
 
     try {
         // await mongoose.connect(mongoThing)
-          await mongoose.connect(mongoThing, {useUnifiedTopology: true, useNewUrlParser: true})
+        await mongoose.connect(process.env.mongodb)
+        //   await mongoose.connect(mongoThing, {useUnifiedTopology: true, useNewUrlParser: true})
         console.log(`Connected to MongoDB at port ${PORT}`)
     } catch (error) {
         console.log(error)

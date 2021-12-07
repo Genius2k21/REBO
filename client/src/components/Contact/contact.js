@@ -172,7 +172,7 @@ const Contact = () => {
             size: 48,             // the size of each button (INTEGER)
             top: 160,             // offset in pixels from the top of the page
             // OPTIONAL PARAMETERS
-            url: 'https://www.sharethis.com', // (defaults to current url)
+            url: 'https://rebo-heroku.herokuapp.com/', // (defaults to current url)
             image: '',  // (defaults to og:image or twitter:image)
             description: 'Share',       // (defaults to og:description or twitter:description)
             title: 'custom title',            // (defaults to og:title or twitter:title)

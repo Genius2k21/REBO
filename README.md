@@ -94,4 +94,4 @@ https://github.com/Genius2k21/REBO
 
 ## <a id="sample"></a>Link to Heroku Deployment
 
-- [REBO](https://)
+- [REBO](https://rebo-heroku.herokuapp.com/)
