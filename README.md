@@ -53,9 +53,12 @@ The basic wireframe structure we created at the beginning of this project.
 
 ![Wireframe Home Page](./public/images/)
 
-## <a id="screenshot"></a>Screenshot
+## <a id="screenshot"></a>Screenshots
 
-![Screenshot of Tasks](/public/images/)
+![Screenshot of Login Page](/client/public/rebo-login-SS.png)
+![Screenshot of Task List Page](/client/public/rebo-tasklist-SS.png)
+![Screenshot of Contact Us Page](/client/public/rebo-contact-us-SS.png)
+![Screenshot of Calculator Page](/client/public/rebo-calculator-SS.png)
 
 ## <a id="installation"></a>Installation
 
@@ -79,28 +82,15 @@ https://github.com/Genius2k21/REBO
 
 ## <a id="contact"></a>Contact
 
-- Joseph Blake
-  Email: josephblake2012@yahoo.com
-  Github: https://github.com/Genius2k21
+- Joseph Blake: [Email](josephblake2012@yahoo.com) | [Github](https://github.com/Genius2k21)
 
-- Nathaniel Gordon
+- Nathaniel Gordon: [Email](begordon22@gmail.com) | [Github](https://github.com/wildkat246)
 
-  - Email: begordon22@gmail.com
-  - Github: https://github.com/wildkat246
+- Pia T: [Email](trivedp18@gmail.com) | [Github](https://github.com/ptriv1)
 
-- Pia T
+- Key Compton Jr.: [Email](integra378@aol.com) | [Github](https://github.com/intergra378)
 
-  - Email: trivedp18@gmail.com
-  - Github: https://github.com/ptriv1
-
-- Key Compton Jr.
-
-  - Email: integra378@aol.com
-  - Github: https://github.com/intergra378
-
-- Michael Feldman
-  - Email: micah41224@gmail.com
-  - Github: https://github.com/micah41224
+- Michael Feldman: [Email](micah41224@gmail.com) | [Github](https://github.com/micah41224)
 
 ## <a id="sample"></a>Link to Heroku Deployment
 

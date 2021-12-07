@@ -16,6 +16,9 @@ const resolvers = require('./resolvers');
 const mongoose = require('mongoose');
 const path = require('path');
 
+// ADDITIONS
+// const db = require('./config/connection');
+
 // module.exports = { typeDefs, resolvers };
 
 
@@ -49,7 +52,8 @@ async function initServer(){
     });
 
     try {
-        await mongoose.connect(process.env.mongodb)
+        // await mongoose.connect(process.env.mongodb)
+          await mongoose.connect(process.env.mongodb, {useUnifiedTopology: true, useNewUrlParser: true})
         console.log(`Connected to MongoDB at port ${PORT}`)
     } catch (error) {
         console.log(error)
