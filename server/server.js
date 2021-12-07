@@ -33,9 +33,9 @@ async function initServer(){
     
     await apolloServer.start()
     apolloServer.applyMiddleware({app})
-    app.use((req,res)=>{
-        res.send("Server started successfully")
-    })
+    // app.use((req,res)=>{
+    //     res.send("Server started successfully")
+    // })
     const PORT = process.env.PORT || 5000;
 
     app.use(express.urlencoded({ extended: false }));
@@ -44,9 +44,11 @@ async function initServer(){
     // Serve up static assets
     app.use('/images', express.static(path.join(__dirname, '../client/images')));
 
-    if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../client/build')));
-    }
+app.use(express.static(path.join(__dirname, '../client/build')));
+
+    // if (process.env.NODE_ENV === 'production') {
+    // app.use(express.static(path.join(__dirname, '../client/build')));
+    // }
 
     app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/build/index.html'));
