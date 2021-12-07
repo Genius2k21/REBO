@@ -58,7 +58,7 @@ The basic wireframe structure we created at the beginning of this project.
 ![Screenshot of Login Page](/client/public/rebo-login-SS.png)
 ![Screenshot of Task List Page](/client/public/rebo-tasklist-SS.png)
 ![Screenshot of Contact Us Page](/client/public/rebo-contact-us-SS.png)
-![Screenshot of Calculator Page](/client/public/rebo-calculator-SS.png)
+![Screenshot of Calculator Page](/client/public/rebo-calculator-ss.png)
 
 ## <a id="installation"></a>Installation
 
