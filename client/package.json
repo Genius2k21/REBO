@@ -21,6 +21,7 @@
     "react-icons": "^4.3.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-textfit": "^1.1.1",
     "react-toastify": "^8.1.0",
     "sed": "0.0.2",
     "sharethis-reactjs": "^1.6.0",

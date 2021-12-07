@@ -13,7 +13,7 @@ import { useQuery } from '@apollo/client';
 import AddTodos from './components/AddTodos';
 import Todo from './components/Todo';
 import Title from './components/Title';
-import Calculator from './components/Calculator';
+import Calculator from './components/Calculator/Calculator';
 import {TodoContext} from './TodoContext';
 import { useState } from 'react';
 import Navbar from "./components/Navbar/navbar";
