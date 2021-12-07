@@ -101,7 +101,6 @@ return (
     <Route path="/Calculator" exact>
         <Calculator />
         </Route>
-        {/* <Redirect to="/Login" />  */}
         </Switch>
         )}
     </TodoContext.Provider>
