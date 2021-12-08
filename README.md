@@ -32,7 +32,7 @@ Project Management App to help assist and facilitate the successful rebuilding a
 
 ## <a id="description"></a>Description
 
-- REBO is a full stack application where users can create accounts
+- REBO is a full stack application where users can track tasks related to their home rebuilding project! Users are able to create password protected accounts. There is an inteface to allow users to log specific rebuild tasks, edit each submitted task and finally users can delete tasks as they are either completed or deviated from. The contact me section enables users to communicate with the public and have their site shared via various social media platforms!
 
 ## <a id="technologies"></a>Technologies and Skills Demonstrated
 
